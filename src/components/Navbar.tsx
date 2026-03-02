@@ -20,7 +20,7 @@ export function Navbar() {
                     </Link>
                     <nav className="hidden md:flex items-center gap-6">
                         <Link href="/products" className="text-sm font-medium hover:text-primary transition-colors">E-Bikes</Link>
-                        <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">Accessories</Link>
+                        <Link href="/accessories" className="text-sm font-medium hover:text-primary transition-colors">Accessories</Link>
                         <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">Support</Link>
                     </nav>
                 </div>
@@ -46,9 +46,9 @@ export function Navbar() {
                         <span className="material-symbols-outlined">shopping_cart</span>
                         <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
                     </button>
-                    <button className="p-2 hover:bg-primary/10 rounded-full text-slate-700 dark:text-slate-200 transition-colors">
+                    <Link href="/auth" className="p-2 hover:bg-primary/10 rounded-full text-slate-700 dark:text-slate-200 transition-colors">
                         <span className="material-symbols-outlined">account_circle</span>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </header>

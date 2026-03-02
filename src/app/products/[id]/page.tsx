@@ -7,11 +7,11 @@ import { useState } from "react";
 import { use } from "react";
 
 const productImages = [
-    { img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDswr89XH7QuDyUhkI3u0hEZRlQOylWrLaWIpk7-rG4aSJe9FJm1Sw47LP9EuRPlIBX891oIDNsM-7adc_wPCWVywTkGMZfzsfCF5xgLrBePrY70fcVWIskd-7PI0awMJ3wb4NjngRL0qn9d-0O42he76CVt-gl9N4gAq-0EPQfw_9sqwM2s9WnV8Joq6ybxaeim7dMAJ3HPhGvMemdAXunF4SJMjApwkLdNrwU1uTpWWtAzywoSmXLbru0KFZATVTdvV3sTNismkY", alt: "Modern sleek black and red electric mountain bike profile" },
-    { img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDz9n5UDVBzMp4iynu6v2QNZT5z4aM23EKjah6QqOvGbwnk3pzsbG5o47Q0gfpG1ldV-Gxxtxifb5HanhNT4EX7J8whIqMkCcNWXlSxvVbiW_7gVKEFvja_MT5XZSFPkQlhbaD5rDOeWZJibJRNgNrU3UmwRdOMoE-Cml6RnkZsxg4Q5g5yiGL3jUIFEnr3zRoGH_mU4g5j3aRLaH2mm5TWXLbejOUDqNeCtR2xhyK92jT8ayg8jzXHDSbdNB6wlfBFsktC_Kr8gdY", alt: "Side view of e-bike frame" },
-    { img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCcXjcRL0RdJOfb3IOh7aUfMGaNg_fzTJSH521TpRMqRRurmQlhrwxvd56AEZ3gjJuPm5K3-r3Txj05FM8si-EJHZaeXH0MfsYdDtCaZG_EbSxQEP9c1uYKKLkRjO9Yr6lOnUb5ccEr5LL5mNWvw7YfG_kMdr2LqVsIPfo3kbicmdFk_0x60pTRmDzWC5GPdK7a8njM1uSdkPRSUH7sizatgjZ1JfyTgm3XUUnSlDnOLTCUyvBy0Yu4kSaBhms6vIfwjzP1pTAx6WY", alt: "Close up of e-bike digital display" },
-    { img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAHC0Dvda5w6tq_Q7fnrM9Xg28wyO3hAqZRbfL683c5Ba1O6MxosSQMWHTs-MuYhVk2P-FdvarTRnHKkMqJWH7uCkL7uxFjM7VC24JCD25SafeDTU5_y42x6v4y2ZmEJfqqLDTifX3RBBBk07-DKphmlF9k6JOEB9i6iqx4nilbBKA-5Qris8W5Mvp0NXHoB5ryx2hK-8j6popEJ6-YmCh3ixbu-nb-VDiSpvOeUmf-2IYG9ZoVgcDlERIaT_srQS0JRHMWSaQcu_4", alt: "E-bike motor and pedals close up" },
-    { img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDCLNNdSbzqlO_wkgRSVJleQ4ylRXqQxYU_vutKXb6QvjvvHvSMFlVpFvXQRq4pTWpGaPw7VNFKtcxZjmx9HeEgPMBSymEnWNsl7SmN79fVrLKPQgxGm12rZbznMD5GcBVWPLJk7CLuLZRMaIKbgtFx4ae_iM3Muc340_YI0p2WPHZgITQbUOtJ8PED3innNH9C1itemQjz2igL2VdpMEVH6yRutPf1w9u4Ib3F8iAEj23Cy3CXm3f7oGmNj6l0oywBEHNk_sMiAz0", alt: "Action shot of e-bike on road" },
+    { text: "Image 1" },
+    { text: "Image 2" },
+    { text: "Image 3" },
+    { text: "Image 4" },
+    { text: "Image 5" },
 ];
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -46,15 +46,15 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                             transition={{ duration: 0.4 }}
                             className="aspect-square w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-white/5 border border-primary/5 shadow-md flex items-center justify-center relative p-8"
                         >
-                            <motion.img
+                            <motion.div
                                 key={activeImage}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3 }}
-                                src={productImages[activeImage].img}
-                                alt={productImages[activeImage].alt}
-                                className="w-full h-full object-contain drop-shadow-2xl"
-                            />
+                                className="w-full h-full flex items-center justify-center text-4xl font-extrabold text-slate-300 dark:text-slate-600 drop-shadow-sm select-none"
+                            >
+                                {productImages[activeImage].text}
+                            </motion.div>
                         </motion.div>
 
                         <div className="grid grid-cols-5 gap-3">
@@ -65,7 +65,9 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                                     className={`aspect-square rounded-xl bg-slate-100 dark:bg-white/5 border-2 transition-all p-2 ${activeImage === idx ? 'border-primary scale-105 shadow-md shadow-primary/20' : 'border-transparent hover:border-primary/50 opacity-70 hover:opacity-100'
                                         }`}
                                 >
-                                    <img src={img.img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover rounded-lg" />
+                                    <div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 dark:text-slate-500 rounded-lg bg-slate-200/50 dark:bg-white/5 select-none">
+                                        Img {idx + 1}
+                                    </div>
                                 </button>
                             ))}
                         </div>
