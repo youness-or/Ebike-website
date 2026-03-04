@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -15,7 +16,13 @@ export function Navbar() {
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center gap-2 text-primary hover:opacity-90 transition-opacity">
-                        <span className="material-symbols-outlined text-4xl">electric_bolt</span>
+                        <Image
+                            src="/logo.jpg"
+                            alt="VoltRide Logo"
+                            width={40}
+                            height={40}
+                            className="rounded-lg object-contain"
+                        />
                         <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">VoltRide</h2>
                     </Link>
                     <nav className="hidden md:flex items-center gap-6">

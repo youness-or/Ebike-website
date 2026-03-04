@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function IntroLoader() {
     return (
@@ -21,7 +22,13 @@ export function IntroLoader() {
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     className="w-20 h-20 rounded-full border-4 border-slate-200 dark:border-white/10 border-t-primary flex items-center justify-center p-2"
                 >
-                    <span className="material-symbols-outlined text-4xl text-primary animate-pulse">electric_bolt</span>
+                    <Image
+                        src="/logo.jpg"
+                        alt="VoltRide Logo"
+                        width={48}
+                        height={48}
+                        className="rounded-full object-contain animate-pulse"
+                    />
                 </motion.div>
                 <div className="flex flex-col items-center gap-1 mt-4">
                     <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">VoltRide</h1>
