@@ -12,7 +12,7 @@ export function Navbar() {
     useEffect(() => setMounted(true), []);
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md transition-colors">
+        <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
                 <div className="flex items-center gap-8">
                     <Link href="/" className="flex items-center gap-2 text-primary hover:opacity-90 transition-opacity">
