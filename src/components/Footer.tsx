@@ -43,7 +43,6 @@ export function Footer() {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white">Support</h3>
                         <ul className="flex flex-col gap-4 text-slate-300 text-sm">
-                            <li><Link className="hover:text-primary transition-colors" href="#">Manuals</Link></li>
                             <li><Link className="hover:text-primary transition-colors" href="#">Shipping Policy</Link></li>
                             <li><Link className="hover:text-primary transition-colors" href="#">Returns & Refunds</Link></li>
                             <li><Link className="hover:text-primary transition-colors" href="#">Contact Us</Link></li>
@@ -61,7 +60,7 @@ export function Footer() {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs">
-                    <p>© {new Date().getFullYear()} VoltRide Electric Mobility Inc. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} VoltRide Electric Mobility Inc. All rights reserved to Younes Or.</p>
                     <div className="flex gap-8">
                         <Link className="hover:text-white transition-colors" href="#">Privacy Policy</Link>
                         <Link className="hover:text-white transition-colors" href="#">Terms of Service</Link>
